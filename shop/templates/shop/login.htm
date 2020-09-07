@@ -1,0 +1,75 @@
+{% extends 'shop/base.htm' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-6 col-sm-12 ">
+            <div class="imgbox" >
+                <img style="width:100%" src="{% static 'shop/imgs/side03.webp' %}"/>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-12 mt-sm-4">
+           
+
+            {% if error2 %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong>{{error2}}</strong> 
+            </div>
+            {% endif %}
+            {% if error1 %}
+
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong> {{error1}}</strong>
+            </div>
+            {% endif %}
+
+            {% if error3 %}
+
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong> {{error3}}</strong>
+                <a href="/shop/contact/" class="btn-sm btn-danger  text-white">Create New Account</a>
+            </div>
+            {% endif %}
+
+
+            <h1>Login Here</h1>              
+              <form action="/shop/login/" method="POST">
+                {% csrf_token %}
+                <div class="form-group">  
+
+                    <input required type="email"placeholder="Email@XYZ.com" class="form-control" name="email" id="" aria-describedby="emailHelpId" placeholder="">
+                    <small id="emailHelpId" class="form-text text-muted">Please Include @email.com</small>
+                    <br>
+                    <input required type="password"placeholder="Password" class="form-control" name="pass"  aria-describedby="emailHelpId" placeholder="">
+                    <small id="emailHelpId" class="form-text text-muted">Please write correct Password</small>
+                    <br>
+
+
+                    <input required type="checkbox" name="check" >
+                    <label>I agree the Terms and Policy</label>
+
+                    <br>
+                    <input class="btn btn-danger text-white" type="submit">
+                </div>
+            </form>
+
+        
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

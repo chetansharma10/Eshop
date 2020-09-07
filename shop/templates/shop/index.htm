@@ -1,0 +1,426 @@
+{% extends 'shop/base.htm' %}
+{% load static %}
+    
+
+{% block content %}
+
+
+
+
+
+    <div class="container baap">
+      <div class="row">
+
+
+        <div class="col-lg-12 col-sm-12 mt-lg-2">
+
+          <div class="parent">
+
+            <div class="child1" style="background-image: url('{% static '/shop/imgs/banner01.webp' %}');">
+              <h1 class="mt-5">Autumn <br><small style="color:rgb(255, 60, 60);">&</small>Winter 2020</h1>
+              <h3 class="mb-5"><strong style="color:rgb(233, 68, 68);">Sale </strong>Available Now....</h3>
+              <button class="btn btn-sm btn-danger text-light">SHOP NOW</button>
+            </div>
+            <div class="child2" style="background-image: url('{% static '/shop/imgs/banner02.webp' %}');">
+              <h1 class="mt-5">SALE<br>
+              <small style="color:rgb(255, 60, 60);">50% OFF</small></h1>
+              <h3 class="mb-5"><strong style="color:rgb(233, 68, 68);">Shop </strong>Now....</h3>
+              <button class="btn btn-sm btn-danger text-light">SHOP NOW</button>
+            </div>
+            <div class="child3" style="background-image: url('{% static '/shop/imgs/banner03.webp' %}');">
+              <h1 class="mt-5"><strong style="color: rgb(240, 75, 75);">Treat</strong> Yourself</h1>
+              <h3 class="mb-5">Visit our near shops
+
+                <svg style="color:yellow" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+
+                </svg>
+
+              </h3>
+              <button class="btn btn-sm btn-danger text-light">SHOP NOW</button>
+            </div>
+
+          </div>
+
+          <style>
+
+                @media screen and (max-width:983px){
+
+               
+
+                  .parent{
+                    height: 400px;
+
+                  }
+
+                  .child1,.child2,.child3{
+                    background-size: contain;
+                    font-size: 1rem;
+                    background-repeat: no-repeat;
+                    background-position-y: 100px;
+                
+                   
+                  }
+                }
+          </style>
+
+          <script>
+
+              var baap=document.querySelector('.baap');
+              var parent=document.querySelector('.parent');
+              console.log(screen.availWidth)
+
+              if(screen.availWidth<894){
+               
+              
+                baap.className="baap container-fluid"
+
+               
+              }
+              else{
+                parent.style.width="100%"
+                baap.className="baap container"
+              }
+          </script>
+
+          <div class="buttons">
+            <button class="one">
+              <svg width="1em"  height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.646 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L6.207 7.5H11a.5.5 0 0 1 0 1H6.207l2.147 2.146z"/>
+              </svg>
+            </button>
+            <button class="two">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="8"/>
+              </svg>
+
+
+            </button>
+            <button class="three"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z"/>
+            </svg></button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  <!-- Slider Ends -->
+
+
+    <!-- Products -->
+    <div class="container">
+      <div class="row">
+        <!-- Heading -->
+        <div class="col-lg-12 mb-5">
+          <div class="titles">
+            <h1>Our Products</h1>
+            <h6>Choose your Choice
+               &nbsp;&nbsp;
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-sliders" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14 3.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM11.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM7 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM4.5 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9.5 3.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM11.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                <path fill-rule="evenodd" d="M9.5 4H0V3h9.5v1zM16 4h-2.5V3H16v1zM9.5 14H0v-1h9.5v1zm6.5 0h-2.5v-1H16v1zM6.5 9H16V8H6.5v1zM0 9h2.5V8H0v1z"/>
+              </svg>
+            </h6>
+          </div>
+        </div>
+
+
+        <!-- Options -->
+        <div class="col-lg-12">
+          <center>
+              <div  >
+                
+                  <form action="/shop/"  method="POST">
+                    {% csrf_token %}
+                    <input   class="btn  bg-dark text-white " type="submit" value="All Products" name="ALL"    >
+                    <input  class="btn  btn-sm bg-danger text-white" type="submit" name="MEN" value="Men ">
+                    <input   class="btn  btn-sm bg-danger text-white" type="submit" name="WOMEN" value="Women">
+                    <input  class="btn  btn-sm bg-danger text-white"   type="submit" name="CHILD"  value="Child">
+                    
+                  </form>
+
+            </div>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+        <!-- Products -->
+        <div class="col-lg-12">
+       
+          <div class="box" >
+             <!--UL STARTS  -->
+            <ul>
+
+              <!-- List STart -->
+             
+              {% if show == check %}
+              {% for product in product %}
+              <li>
+              
+                <div class="prd">
+                  <div class="card cardsx" style="width: 12rem;">
+                    <img src="/media/{{product.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.product_name}}</h5>
+                      <h6>{{product.desc}}</h6>
+                      <p>${{product.price}}</p>
+
+
+                    </div>
+                    <div class="groups"  style="display: flex;justify-content:center;align-items:center;">
+                      <button  data-toggle="tooltip" data-placement="top" title="Add to Cart" style="background: transparent;border:transparent;" id={{product.id}} class="cart"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z"/>
+                      </svg></button>
+
+                    <button data-toggle="tooltip" data-placement="top" title="Quantity Reduced" style="background: transparent;border:transparent;" id={{product.id}} class="cart2">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4 7.5a.5.5 0 0 0 0 1h8a.5.5 0 0 0 0-1H4z"/>
+                        </svg>
+                      </button>
+
+                      <button data-toggle="tooltip" data-placement="top" title="Removed" style="background: transparent;border:transparent;" id={{product.id}} class="cart3">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                        </svg>
+                      </button>
+
+
+                      <a href="/shop/productView/{{product.id}}/"data-toggle="tooltip" data-placement="top" title="View" style="color:red;background: transparent;border:transparent;" id={{product.id}} >
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pip-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm7 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-5z"/>
+                        </svg>
+                      </a>
+
+                    
+                    </div>
+                    
+                  </div>
+                </div>
+
+               
+              </li>
+             
+              <!-- List Ends -->
+
+              
+              {% endfor %}
+
+     
+
+              {% else %}
+              {% for product in product %}
+              <li>
+                {% if show == product.subcategory %}
+                <div class="prd">
+                  <div class="card" style="width: 12rem;">
+                    <img src="/media/{{product.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.product_name}}</h5>
+                      <h6>{{product.desc}}</h6>
+                      <p>${{product.price}}</p>
+
+
+                    </div>
+
+
+                    <div class="groups"  style="display: flex;justify-content:center;align-items:center;">
+                      <button  data-toggle="tooltip" data-placement="top" title="Add to Cart" style="background: transparent;border:transparent;" id={{product.id}} class="cart"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z"/>
+                      </svg></button>
+
+                    <button data-toggle="tooltip" data-placement="top" title="Quantity Reduced" style="background: transparent;border:transparent;" id={{product.id}} class="cart2">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4 7.5a.5.5 0 0 0 0 1h8a.5.5 0 0 0 0-1H4z"/>
+                        </svg>
+                      </button>
+
+                      <button data-toggle="tooltip" data-placement="top" title="Removed" style="background: transparent;border:transparent;" id={{product.id}} class="cart3">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                        </svg>
+                      </button>
+
+                      <a href="/shop/productView/{{product.id}}"data-toggle="tooltip" data-placement="top" title="View" style="color:red;background: transparent;border:transparent;" id={{product.id}} >
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pip-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm7 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-5z"/>
+                        </svg>
+                      </a>
+
+
+
+
+                    </div>
+                    
+                  </div>
+                </div>
+
+               
+              </li>
+             
+              <!-- List Ends -->
+              {% endif %}
+
+              
+              {% endfor %}
+
+              
+
+              {% endif %}
+ 
+
+
+
+
+
+
+
+              
+
+            </ul>
+            <!-- UL ends -->
+          </div>
+
+
+          <div class="change" >
+            <center>
+           
+                <svg  class="btn2" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                </svg>
+             
+
+            
+                <svg  class="btn1" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                </svg>
+         
+
+            </center>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- Products Ends -->
+
+
+
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+  //Tool Tip Start
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  //Tooltip Ends
+
+
+
+
+
+  console.log("Working");
+  var basket=document.getElementById('elements');
+
+
+  //Adding Items to Cart
+  if (localStorage.getItem('cart')==null){
+    var cart={};
+
+  }
+  else{
+    
+    cart=JSON.parse(localStorage.getItem('cart'));
+  }
+ 
+   $('.cart').click(function(){
+    
+
+    var id=this.id.toString();
+   
+    if(cart[id]!=undefined){
+      cart[id]=cart[id]+1;
+
+    }
+    else{
+      cart[id]=1;
+    }
+
+    console.log(cart)
+    localStorage.setItem('cart',JSON.stringify(cart))
+    basket.innerHTML=Object.keys(cart).length;
+
+    
+   });
+  
+   //Removing Items from Cart
+   $('.cart2').click(function(){
+     var id2=this.id.toString();
+     if(cart[id2]!=undefined){
+       if(cart[id2]!=0){
+         cart[id2]=cart[id2]-1
+       }
+       else{
+         delete cart[id2];
+
+       }
+     }
+     else{
+       delete cart[id2]
+     }
+     
+   
+
+
+
+
+
+
+    localStorage.setItem('cart',JSON.stringify(cart))
+    basket.innerHTML=Object.keys(cart).length;
+    console.log(cart)
+
+
+   });
+
+
+
+   //Clear all Items of cart
+   $('.cart3').click(function(){
+    var id3=this.id.toString();
+    
+     delete cart[id3]
+     
+
+
+    localStorage.setItem('cart',JSON.stringify(cart))
+    basket.innerHTML=Object.keys(cart).length;
+    console.log(cart)
+
+
+   });
+
+
+
+
+
+   basket.innerHTML=Object.keys(cart).length;
+
+
+
+
+
+
+
+</script>
+{% endblock %}

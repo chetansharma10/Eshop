@@ -1,0 +1,314 @@
+{% extends 'shop/base.htm' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-9 mt-5 col-sm-12 mts-0">
+            <h4>Your Cart Items</h4>
+            <div>
+  
+                <table id="cartProducts" class="mb-5"> 
+                    <tr>
+                        <style>
+                            th{
+                                padding: 1%;
+                                background-color: rgb(70, 70, 70);
+                                color:white;
+                                outline: 0.5px solid white;
+                                font-size: 1rem;
+                            }
+                            table{
+                                text-align: center;
+                                width: 100%;
+                                height: 100%;
+                                box-shadow: 0 0 11px #e3dede;
+                                
+                              
+                               
+                            }
+                          
+                            tr{
+                                border: 0.5px solid rgb(240, 240, 240);
+
+                            }
+                            td{
+                                border: 0.5px solid rgb(216, 216, 216);
+
+                            }
+                        </style>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Subcategory</th>
+                        <th>Price</th>
+                        <th>View</th>
+                        <th>Published Date</th>
+
+                    </tr>
+             
+                </table>
+
+            </div>
+    
+      
+
+
+
+
+        
+
+
+        </div>
+        <div class="col-lg-2 mt-5 col-sm-12" >
+            <h4>Payment </h4>
+            <hr>
+            
+            <h6 class="text-secondary">Total Price:<strong><span id="price">0</span></strong></h6>
+            <h6 class="text-secondary">No of Quantities:<strong><span id="quantities">0</span></strong></h6>
+            <h6 class="text-secondary">No of Sub Quantities:<strong><span id="subquantities">0</span></strong></h6>
+            <hr>
+
+
+            <span class="text-danger">WARNING</span>
+          <small class="text-secondary">Click here to empty the cart.<span class="text-warning">This will leads your cart empty and you have to select items again</span></small>
+
+          <button class="empty btn btn-danger">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+              </svg>
+          </button>
+
+         
+             
+        <a  class=" bg-secondary btn text-white" href="/shop/" >
+        
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+                    <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                  </svg></a>
+          
+
+         <hr>
+
+         <form action="/shop/cart" method="GET">
+
+             
+            <input type="text" hidden id="Prices" name="Prices">
+            <input type="text" hidden id="Quantity" name="Quantity">
+            <input type="text" hidden id="Subquantity" name="Subquantity">
+
+
+             <button class="btn btn-danger text-white" type='Submit' id="clear">            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM4 14a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm7 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm.354-7.646a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+              </svg> CHECKOUT</button>
+             
+             <hr>
+           
+            
+         </form>
+
+         {% if error1x %}
+         <small class="text-danger">{{error1x}}</small>
+         {% endif %}
+
+         {% if error2x %}
+         <style>
+             #loader{
+                animation-name: rotating;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: both;
+                animation-duration: 1s;
+                animation-iteration-count: 5;
+
+             }
+             @keyframes rotating
+             {
+                 100%{
+                    transition: 1s ease;
+                    transform: rotate(360deg);
+                 }
+             
+             }
+
+         </style>
+
+         <svg id="loader" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-bottom" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5zm2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2h-7z"/>
+          </svg>
+         <small class="text-success">{{error2x}}</small>
+         {% endif %}
+
+         
+         
+
+
+
+       
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var pr=document.getElementById('Prices')
+    var qt=document.getElementById('Quantity')
+    var sqt=document.getElementById('Subquantity')
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var cartsProducts=document.getElementById('cartProducts')
+
+    var data = JSON.parse("{{data|escapejs}}"); 
+    var datakeys=Object.keys(data);
+
+
+    var cartObj=JSON.parse(localStorage.getItem('cart'))
+    var cartKeys=Object.keys(cartObj)
+    var cartKeysLength=cartKeys.length;
+
+    var values=new Array();
+   
+    
+  
+ 
+
+    for(var i=0;i<datakeys.length;i++){
+        for(j=0;j<cartKeys.length;j++){
+            
+            if(cartKeys[j]==datakeys[i]){
+               
+                values.push(cartKeys[j])
+                break;
+            }
+            
+        }
+    }
+
+    
+
+
+    var element;
+    var element2;
+
+    var textNode;
+    var totalPrice=0;
+    var x;
+    var prices=new Array();
+    //Apply Logic Here
+   var itemsLengths=Object.values(cartObj)
+   console.log(itemsLengths)
+  
+    for(var m=0;m<values.length;m++){
+        x=values[m]
+        element=document.createElement('tr')
+        
+        
+        
+        for(var i=0;i<data[x].length;i++){
+            
+            element2=document.createElement('td')
+            if(i==5){
+                element2.innerHTML=`<img width="100px" height="100px"src='/media/${data[x][i]}' >`
+
+
+            }
+            else if(i==4){
+               
+
+                prices.push(data[x][i]);
+                element2.innerText=`${data[x][i]}`
+
+            }
+            else{
+                element2.innerText=`${data[x][i]}`
+
+            }
+            element.appendChild(element2)
+
+        }  
+        cartsProducts.appendChild(element)
+
+
+
+
+        
+    }
+  
+    var all=0;
+    for(var t=0;t<prices.length;t++){
+       
+        console.log(itemsLengths[t])
+        all=all+itemsLengths[t]
+
+    }
+
+    console.log(prices)
+    for(var v=0;v<prices.length;v++){
+       totalPrice=prices[v]*itemsLengths[v]+totalPrice;
+    }
+
+    var price=document.getElementById('price');
+    price.innerHTML="$"+`${totalPrice}`;
+    price.style.color="red"
+
+    var quantities=document.getElementById('quantities');
+    quantities.innerHTML=values.length;
+    quantities.style.color="red";
+
+    var subquantities=document.getElementById('subquantities');
+    subquantities.innerHTML=all;
+    subquantities.style.color="red";
+
+
+
+    var empty=document.querySelector('.empty');
+    empty.addEventListener('click',()=>{
+
+        localStorage.clear('cart');
+    
+        location.reload();
+
+
+        
+    });
+    
+    pr.value=totalPrice;
+    qt.value=values.length;
+    sqt.value=all;
+
+    var clear=document.getElementById('clear');
+
+    clear.addEventListener('click',()=>{
+        localStorage.clear('clear');
+     
+    })
+
+
+
+
+
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,114 @@
+html{
+    scroll-behavior: smooth;
+}
+.parent{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 400px;
+}
+.child1{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+   
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: none;
+}
+.child1 h3{
+    color:rgb(90, 90, 90);
+    font-size:20px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+.child1 h1{
+
+    font-weight: bolder;
+}
+.child2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: none;
+    transform: translateX(2020px);
+    
+}
+
+.child2 h3{
+    color:rgb(90, 90, 90);
+    font-size:20px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+.child2 h1{
+   
+    font-weight: bolder;
+}
+
+
+
+
+
+.child3{
+    position: absolute;
+    width: 100%;
+   
+    background-size:cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    transform: translateX(2020px);
+}
+
+
+
+
+.child3 h3{
+    color:rgb(90, 90, 90);
+    font-size:20px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+.child3 h1{
+   
+    font-weight: bolder;
+    
+}
+
+
+
+
+
+
+
+
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button{
+    margin: 4px;
+    background-color: transparent;
+    border: transparent;
+    width: 30px;
+    height: 30px;
+}

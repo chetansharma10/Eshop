@@ -1,0 +1,225 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!-- CSS STARTS-->
+      <style>
+        .navbar{
+          font-family: 'Quicksand', sans-serif;
+        }
+
+      </style>
+    <!-- CSS ENDS -->
+
+    <link rel="stylesheet" href="{% static 'shop/CSS/index.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/CSS/index2.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/CSS/index3.css' %}">
+
+  </head>
+  <body>
+
+
+    
+
+    
+
+    <!-- Nav Bar Starts -->
+    <nav style="transition:2s ease-in;" class="navbar head navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/shop">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 4h14v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm7-2.5A2.5 2.5 0 0 0 5.5 4h-1a3.5 3.5 0 1 1 7 0h-1A2.5 2.5 0 0 0 8 1.5z"/>
+        </svg>
+        Shop<small><small style="color:rgb(216, 32, 32)">.com</small></small>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/shop">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+                <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              </svg>
+              Home <span class="sr-only">(current)</span></a>
+          </li>
+
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+ 
+
+          {% if showOUT == "False" %}
+          <li class="nav-item">
+            <a class="nav-link" id="login" href="/shop/login">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+              Login</a>
+          </li>
+
+          {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" id="logout" href="/shop/logout">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+              Logout</a>
+          </li>
+          {% endif %}
+
+         
+
+
+
+       
+              <li class="nav-item">
+                <a class="nav-link" id="signup" href="/shop/contact">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                  Sign Up</a>
+              </li>
+              
+     <script>
+      if(window.location=="http://127.0.0.1:8000/shop/contact/"){
+        document.getElementById('logout').style.display="none";
+     
+      }
+      else{
+      
+        document.getElementById('logout').style.display="block";
+
+      }
+
+
+
+      if(window.location=="http://127.0.0.1:8000/shop/login/"){
+        document.getElementById('logout').style.display="none";
+        
+      }
+      else{
+        document.getElementById('signup').style.display="block";
+        document.getElementById('logout').style.display="block";
+
+      }
+
+      
+      if(window.location=="http://127.0.0.1:8000/shop/" ){
+        document.getElementById('logout').style.display="block";
+        
+      }
+      else{
+      
+        document.getElementById('logout').style.display="none";
+        document.getElementById('signup').style.display="none";
+      }
+
+      
+      
+
+
+
+     </script>
+          
+
+        
+
+       
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+
+
+
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" id="cart" href="/shop/cart">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+              </svg>
+
+              <strong></strong><sup style="color:red;" id="elements"><script>document.getElementById('elements').innerHTML=Object.keys(JSON.parse(localStorage.getItem('cart'))).length;</script></sup></strong>
+              </a>
+          </li>
+       
+          {% if email %}
+
+
+
+          <li id="email" class="nav-item">
+            <a class="nav-link"  id="x" href="/shop/index">
+          <svg width="1em"  height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+            <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+          </svg>
+          
+          <small id="y">{{email}}<small class="text-success"> <strong>online</strong> </small></small>  
+          </a>
+          </li> 
+          {% endif %}
+
+        
+
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- Nav Bar Ends -->
+
+
+    {% block content %}
+    {% endblock %}
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer Ends -->
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+ 
+ 
+    <!-- MY JS -->
+    <script src="{% static 'shop/JS/index.js' %}"></script>
+   
+      {% block js %}
+      {% endblock %}
+      <script src="{% static 'shop/JS/animations.js' %}"></script>
+   
+ 
+  </body>
+</html>
