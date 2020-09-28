@@ -1,4 +1,4 @@
-# Eshop
+# Eshop(Ecommerce Web site)
 Django(Python)  Based E-commerce website with login,logout,products add,delete,update,create,checkout etc..<br>
 
 
